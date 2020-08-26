@@ -1,0 +1,146 @@
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 65.5%;
+}
+
+@font-face {
+ font-family: 'Quicksand';
+ font-style: normal;
+ font-weight: 400;
+ src: local('Quicksand Regular'), local('Quicksand-Regular'), url(https://fonts.gstatic.com/s/quicksand/v7/6xKtdSZaM9iE8KbpRA_hK1QNYuDyPw.woff2) format('woff2');
+ unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+body {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--color-grey-dark-2);
+  min-height: 100vh;
+}
+
+.hero {
+  height: 50vh;
+  width: 100%;
+  margin: auto;
+  background: #E3E8FF;
+  clip-path: polygon(0 0, 100% 0%, 100% 90%, 0% 100%);
+  padding: 2rem;
+}
+
+.hero__header {
+  height: 6rem;
+  max-width: 1500px;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  justify-items: center;
+  margin: auto;
+}
+
+.hero__logo {
+  height: 4rem;
+  width: 4rem;
+  border-radius: 50%;
+  background: #333333;
+}
+
+.hero__screen {
+  padding: 2rem;
+  max-width: 1500px;
+  display: grid;
+  grid-template-columns: 70% auto;
+  margin: 10rem auto;
+}
+
+.hero__note {
+  color: black;
+  font-size: 4rem;
+}
+
+.navigation__list {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.navigation__item {
+  height: 5px;
+  width: 40px;
+  background: #333333;
+  margin: 0 5px;
+  border-radius: 3px;
+}
+
+.events {
+  max-width: 1000px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  gap: 2rem;
+}
+
+.event {
+  position: relative;
+  height: 450px;
+  max-width: 350px;
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.1), 0px 100px 200px rgba(92, 103, 153, 0.3);
+  border-radius: 3px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.event:hover .event__image{
+  transform: scale(1.07);
+}
+
+.event__date {
+  position: absolute;
+  top: 140px;
+  left: 2rem;
+  background: black;
+  color: white;
+  font-size: 2rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 1rem;
+}
+
+.event__caption-body {
+  height: 0px;
+}
+
+.event__caption-title {
+  color: #3913B8;
+  margin: 2rem 2rem;
+  text-transform: uppercase;
+  font-weight: bolder;
+  font-size: x-large;
+}
+
+.event__caption-details {
+  color:black;
+  font-size: 1.5rem;
+  margin: 1rem 2rem;
+}
+
+.event__image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: all .3s;
+  backface-visibility: hidden;
+}
