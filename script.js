@@ -1,3 +1,14 @@
+const modal = {
+  show(id) {
+    const modal = document.getElementById(id);
+    modal.classList.add("modal--show");
+  },
+  hide(id) {
+    const modal = document.getElementById(id);
+    modal.classList.remove("modal--show");
+  }
+}
+
 const events = document.getElementsByClassName('event');
 [...events].forEach(event => {
   event.addEventListener('click', event => {
@@ -8,11 +19,12 @@ const events = document.getElementsByClassName('event');
      * Do all logic to show currently selected item here.
     */
 
-    window.location.href = "/#view-events-details";
+    modal.show("view-events-details");
   });
 });
 
 const closeModal = document.getElementById('modal__close');
 closeModal.addEventListener('click', event => {
-  window.location.href = "/#";
-})
+  modal.hide("view-events-details");
+});
+
