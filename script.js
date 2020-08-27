@@ -1,6 +1,14 @@
 const modal = {
+  isModalNonDialog: false,
+  makeModalNonDialog(modal) {
+    modal.addEventListener('click', event => {
+      this.isModalNonDialog = true;
+      if (event.target === modal) modal.classList.remove("modal--show");
+    });
+  },
   show(id) {
     const modal = document.getElementById(id);
+    if (!this.isModalNonDialog) this.makeModalNonDialog(modal);
     modal.classList.add("modal--show");
   },
   hide(id) {
